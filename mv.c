@@ -27,14 +27,6 @@ int main(int argc, char *argv[]){
         }
     } else { // conferir se o último argumento é um diretório
         fileTarget = argv[argc - 1];
-        /*if(fdOriginal < 0){
-            printf("%s: cannot find '%s': No such file or directory\n", argv[0], argv[1]);
-        } else {
-            int size;
-            while((size = read(fdOriginal, buff, 1024)) != 0){
-                write(fdCopy, buff, size);
-            }
-        }*/
     }
     return 0;
 }

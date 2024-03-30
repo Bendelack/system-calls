@@ -4,24 +4,20 @@
 #include <errno.h> // import para tratamento de erro
 
 int main(int argc, char *argv[]){
-    int removedDir;
+    int removedDir; // armazena o retorno da função rmdir
     if ( argc < 2 )
-        printf("%s: missing operand\n", argv[0]);
+        printf("%s: missing operand\n", argv[0]); // se não foi passado argumento
     else {
-        for ( int i = 1; i < argc; i++ ){
-            removedDir = rmdir(argv[i]);
+        for ( int i = 1; i < argc; i++ ){ // repete para cada argumento informado
+            removedDir = rmdir(argv[i]); // função para remover um diretório. o argumento é o path do diretório
             if(removedDir < 0){ // tratamento de erros
-                if (errno == EEXIST)
-    	            printf("%s: failed to remove directory '%s': already exists\n", argv[0],argv[i]);
-                else if (errno == ENOENT)
+                if (errno == ENOENT) // se o diretório não existir
     	            printf("%s: failed to remove directory '%s': no such directory\n", argv[0],argv[i]);
-                else if (errno == ENOTDIR)
+                else if (errno == ENOTDIR) // se o argumento não for um diretório
     	            printf("%s: failed to remove directory '%s': is not a directory\n", argv[0],argv[i]);
-                else if (errno == EACCES)
-    	            printf("%s: failed to remove directory '%s': access danied\n", argv[0],argv[i]);
-                else if (errno == ENOTEMPTY)
+                else if (errno == ENOTEMPTY) // se o diretório não estiver vazio
     	            printf("%s: failed to remove '%s':directory not empty\n", argv[0],argv[i]);
-                else
+                else // outros erros
     	            printf("%s: failed to remove directory '%s'\n", argv[0], argv[i]);
             }
         }
