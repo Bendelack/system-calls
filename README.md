@@ -12,8 +12,8 @@
 - **[cat](cat.c)** -> Mostra no terminal o conteúdo de um arquivo. Considera arquivos em modo texto, mostrando cada byte como um valor ASCCII.
 - **[mkdir](mkdir.c)** -> Cria um novo diretório.
 - **[rmdir](rmdir.c)** -> Remove um diretório, caso o mesmo esteja vazio.
-- **[chmod](chmod.c)** -> Muda as permissões de um arquivo/diretório. (talvez seja implementado ainda nesta vida)
-- **[chown](chown.c)** -> Muda o usuário dono do arquivo e/ou o grupo ao qual ele pertence. (talvez seja implementado ainda nesta vida)
+- **chmod** -> Muda as permissões de um arquivo/diretório. (talvez seja implementado ainda nesta vida)
+- **chown** -> Muda o usuário dono do arquivo e/ou o grupo ao qual ele pertence. (talvez seja implementado ainda nesta vida)
 
 ### Outros Programas
 - **[touch](touch.c)** -> Cria um novo arquivo
